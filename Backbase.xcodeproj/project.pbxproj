@@ -17,6 +17,7 @@
 		8368818E2636986E00264F79 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368818D2636986E00264F79 /* Storyboarded.swift */; };
 		836881952636991A00264F79 /* Cities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836881942636991A00264F79 /* Cities.storyboard */; };
 		8368819A2636992E00264F79 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881992636992E00264F79 /* CitiesViewController.swift */; };
+		836881AE2636A2FB00264F79 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881AD2636A2FB00264F79 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8368818D2636986E00264F79 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		836881942636991A00264F79 /* Cities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cities.storyboard; sourceTree = "<group>"; };
 		836881992636992E00264F79 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		836881AD2636A2FB00264F79 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		836881802636968600264F79 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				836881AD2636A2FB00264F79 /* UIColor+Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8368816F26368B9000264F79 /* AppCoordinator.swift in Sources */,
+				836881AE2636A2FB00264F79 /* UIColor+Extensions.swift in Sources */,
 				8368819A2636992E00264F79 /* CitiesViewController.swift in Sources */,
 				8368812D2636895E00264F79 /* AppDelegate.swift in Sources */,
 				836881862636986200264F79 /* Coordinator.swift in Sources */,
@@ -575,7 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Backbase.Backbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -595,7 +599,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Backbase.Backbase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
