@@ -57,19 +57,13 @@ class CitiesViewController: UIViewController, Storyboarded {
     private func getData() {
         citiesViewModel.getCities()
     }
-    
-    private func showAlertWith(_ message: String) {
-        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(ac, animated: true, completion: nil)
-    }
 }
 
 // MARK: - BackbaseTableViewDelegate
 extension CitiesViewController: BackbaseTableViewDelegate {
     func tableView<T>(didSelectModelAt model: T) {
-        if let city = model as? City {
-            print(city.name ?? "")
+        if let city = model as? City, let coordinates = city.coordinate {
+            self.coordinator?.navigateToMapWith(coordinates)
         }
     }
 }

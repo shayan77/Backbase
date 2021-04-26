@@ -18,9 +18,7 @@ final class CitiesViewModel {
     init(citiesService: CitiesServiceProtocol) {
         self.citiesService = citiesService
     }
-    
-    var loading: ((Bool) -> Void)?
-    
+        
     var cities: (([City]) -> Void)?
     var errorHandler: ((String) -> Void)?
     

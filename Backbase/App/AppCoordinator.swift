@@ -36,6 +36,12 @@ final class AppCoordinator: NSObject, Coordinator {
         let citiesViewController = CitiesViewController.instantiate(coordinator: self)
         navigationController.pushViewController(citiesViewController, animated: true)
     }
+    
+    func navigateToMapWith(_ coordintes: Coordinate) {
+        let mapViewController = MapViewController.instantiate(coordinator: self)
+        mapViewController.mapViewModel.coordinate = coordintes
+        navigationController.pushViewController(mapViewController, animated: true)
+    }
 }
 
 extension AppCoordinator: UINavigationControllerDelegate {
