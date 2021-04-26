@@ -31,6 +31,9 @@
 		836881EF2636AAA200264F79 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881EE2636AAA200264F79 /* RequestManagerProtocol.swift */; };
 		836881F42636AD8A00264F79 /* CitiesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881F32636AD8A00264F79 /* CitiesServiceProtocol.swift */; };
 		836881F92636ADE100264F79 /* CitiesOfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881F82636ADE100264F79 /* CitiesOfflineService.swift */; };
+		8368822C2636E13200264F79 /* BackbaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368822B2636E13200264F79 /* BackbaseTableViewCell.swift */; };
+		836882342636E16C00264F79 /* BackbaseTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836882332636E16C00264F79 /* BackbaseTableViewDataSource.swift */; };
+		836882392636E1CA00264F79 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836882382636E1CA00264F79 /* CellAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		836881EE2636AAA200264F79 /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
 		836881F32636AD8A00264F79 /* CitiesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesServiceProtocol.swift; sourceTree = "<group>"; };
 		836881F82636ADE100264F79 /* CitiesOfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesOfflineService.swift; sourceTree = "<group>"; };
+		8368822B2636E13200264F79 /* BackbaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTableViewCell.swift; sourceTree = "<group>"; };
+		836882332636E16C00264F79 /* BackbaseTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTableViewDataSource.swift; sourceTree = "<group>"; };
+		836882382636E1CA00264F79 /* CellAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				8368817D2636960C00264F79 /* Network */,
-				8368817E2636961200264F79 /* Data */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 		8368816526368B1000264F79 /* UIKit Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8368822A2636E11500264F79 /* UITableViewDataSource */,
 				8368817F2636961E00264F79 /* Coordinator */,
 			);
 			path = "UIKit Utilities";
@@ -263,13 +269,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		8368817E2636961200264F79 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		8368817F2636961E00264F79 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +333,16 @@
 				836881DF2636AA2700264F79 /* ResponseValidator.swift */,
 			);
 			path = ResponseValidator;
+			sourceTree = "<group>";
+		};
+		8368822A2636E11500264F79 /* UITableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8368822B2636E13200264F79 /* BackbaseTableViewCell.swift */,
+				836882332636E16C00264F79 /* BackbaseTableViewDataSource.swift */,
+				836882382636E1CA00264F79 /* CellAnimator.swift */,
+			);
+			path = UITableViewDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,11 +488,14 @@
 				836881E52636AA7300264F79 /* URLRequestLoggableProtocol.swift in Sources */,
 				8368818E2636986E00264F79 /* Storyboarded.swift in Sources */,
 				836881D62636A9C200264F79 /* RequestManager.swift in Sources */,
+				8368822C2636E13200264F79 /* BackbaseTableViewCell.swift in Sources */,
 				836881B62636A7F000264F79 /* City.swift in Sources */,
 				836881D12636A9B700264F79 /* HTTPMethod.swift in Sources */,
 				836881EF2636AAA200264F79 /* RequestManagerProtocol.swift in Sources */,
 				836881EA2636AA7E00264F79 /* ResponseLog.swift in Sources */,
 				836881F92636ADE100264F79 /* CitiesOfflineService.swift in Sources */,
+				836882342636E16C00264F79 /* BackbaseTableViewDataSource.swift in Sources */,
+				836882392636E1CA00264F79 /* CellAnimator.swift in Sources */,
 				836881C92636A9A900264F79 /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
