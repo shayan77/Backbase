@@ -29,6 +29,8 @@
 		836881E52636AA7300264F79 /* URLRequestLoggableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881E42636AA7300264F79 /* URLRequestLoggableProtocol.swift */; };
 		836881EA2636AA7E00264F79 /* ResponseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881E92636AA7E00264F79 /* ResponseLog.swift */; };
 		836881EF2636AAA200264F79 /* RequestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881EE2636AAA200264F79 /* RequestManagerProtocol.swift */; };
+		836881F42636AD8A00264F79 /* CitiesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881F32636AD8A00264F79 /* CitiesServiceProtocol.swift */; };
+		836881F92636ADE100264F79 /* CitiesOfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836881F82636ADE100264F79 /* CitiesOfflineService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		836881E42636AA7300264F79 /* URLRequestLoggableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestLoggableProtocol.swift; sourceTree = "<group>"; };
 		836881E92636AA7E00264F79 /* ResponseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseLog.swift; sourceTree = "<group>"; };
 		836881EE2636AAA200264F79 /* RequestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerProtocol.swift; sourceTree = "<group>"; };
+		836881F32636AD8A00264F79 /* CitiesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesServiceProtocol.swift; sourceTree = "<group>"; };
+		836881F82636ADE100264F79 /* CitiesOfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesOfflineService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,8 @@
 		8368817C2636960100264F79 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				836881F32636AD8A00264F79 /* CitiesServiceProtocol.swift */,
+				836881F82636ADE100264F79 /* CitiesOfflineService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 			files = (
 				8368816F26368B9000264F79 /* AppCoordinator.swift in Sources */,
 				836881AE2636A2FB00264F79 /* UIColor+Extensions.swift in Sources */,
+				836881F42636AD8A00264F79 /* CitiesServiceProtocol.swift in Sources */,
 				836881E02636AA2700264F79 /* ResponseValidator.swift in Sources */,
 				8368819A2636992E00264F79 /* CitiesViewController.swift in Sources */,
 				8368812D2636895E00264F79 /* AppDelegate.swift in Sources */,
@@ -476,6 +483,7 @@
 				836881D12636A9B700264F79 /* HTTPMethod.swift in Sources */,
 				836881EF2636AAA200264F79 /* RequestManagerProtocol.swift in Sources */,
 				836881EA2636AA7E00264F79 /* ResponseLog.swift in Sources */,
+				836881F92636ADE100264F79 /* CitiesOfflineService.swift in Sources */,
 				836881C92636A9A900264F79 /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
