@@ -9,6 +9,11 @@ import UIKit
 
 class CitiesViewController: UIViewController, Storyboarded {
     
+    // MARK: - Properties
+    @IBOutlet var citiesTableView: UITableView!
+    
+    var citiesTableViewDataSource: BackbaseTableViewDataSource<CityCell>!
+    
     weak var coordinator: AppCoordinator?
     
     let citiesViewModel = CitiesViewModel(citiesService: CitiesOfflineService.shared)
@@ -24,8 +29,10 @@ class CitiesViewController: UIViewController, Storyboarded {
 
     // MARK: - Customizing View
     private func setupView() {
-
-        
+        // productsTableViewDataSource
+        citiesTableViewDataSource = BackbaseTableViewDataSource(cellHeight: 60, items: [], tableView: citiesTableView, delegate: self, animationType: .type2(0.5))
+        citiesTableView.delegate = citiesTableViewDataSource
+        citiesTableView.dataSource = citiesTableViewDataSource
     }
     
     // MARK: - Bindings
@@ -35,7 +42,9 @@ class CitiesViewController: UIViewController, Storyboarded {
         citiesViewModel.cities = { [weak self] cities in
             guard let self = self else { return }
             // Add new products to tableView dataSource.
-            self.showAlertWith("\(cities.count)")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.citiesTableViewDataSource.appendItemsToTableView(cities)
+            })
         }
         
         // Subscribe to errors
@@ -53,5 +62,14 @@ class CitiesViewController: UIViewController, Storyboarded {
         let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(ac, animated: true, completion: nil)
+    }
+}
+
+// MARK: - BackbaseTableViewDelegate
+extension CitiesViewController: BackbaseTableViewDelegate {
+    func tableView<T>(didSelectModelAt model: T) {
+        if let city = model as? City {
+            print(city.name ?? "")
+        }
     }
 }

@@ -34,6 +34,8 @@
 		8368822C2636E13200264F79 /* BackbaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368822B2636E13200264F79 /* BackbaseTableViewCell.swift */; };
 		836882342636E16C00264F79 /* BackbaseTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836882332636E16C00264F79 /* BackbaseTableViewDataSource.swift */; };
 		836882392636E1CA00264F79 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836882382636E1CA00264F79 /* CellAnimator.swift */; };
+		836882402636EDB900264F79 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8368823E2636EDB900264F79 /* CityCell.swift */; };
+		836882412636EDB900264F79 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8368823F2636EDB900264F79 /* CityCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		8368822B2636E13200264F79 /* BackbaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTableViewCell.swift; sourceTree = "<group>"; };
 		836882332636E16C00264F79 /* BackbaseTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackbaseTableViewDataSource.swift; sourceTree = "<group>"; };
 		836882382636E1CA00264F79 /* CellAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
+		8368823E2636EDB900264F79 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		8368823F2636EDB900264F79 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 		8368817A263695F800264F79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8368823D2636EDA200264F79 /* Cell */,
 				836881942636991A00264F79 /* Cities.storyboard */,
 				836881992636992E00264F79 /* CitiesViewController.swift */,
 			);
@@ -345,6 +350,15 @@
 			path = UITableViewDataSource;
 			sourceTree = "<group>";
 		};
+		8368823D2636EDA200264F79 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8368823E2636EDB900264F79 /* CityCell.swift */,
+				8368823F2636EDB900264F79 /* CityCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				836881BC2636A82600264F79 /* cities.json in Resources */,
+				836882412636EDB900264F79 /* CityCell.xib in Resources */,
 				836881392636895F00264F79 /* LaunchScreen.storyboard in Resources */,
 				836881362636895F00264F79 /* Assets.xcassets in Resources */,
 				836881952636991A00264F79 /* Cities.storyboard in Resources */,
@@ -490,6 +505,7 @@
 				836881D62636A9C200264F79 /* RequestManager.swift in Sources */,
 				8368822C2636E13200264F79 /* BackbaseTableViewCell.swift in Sources */,
 				836881B62636A7F000264F79 /* City.swift in Sources */,
+				836882402636EDB900264F79 /* CityCell.swift in Sources */,
 				836881D12636A9B700264F79 /* HTTPMethod.swift in Sources */,
 				836881EF2636AAA200264F79 /* RequestManagerProtocol.swift in Sources */,
 				836881EA2636AA7E00264F79 /* ResponseLog.swift in Sources */,

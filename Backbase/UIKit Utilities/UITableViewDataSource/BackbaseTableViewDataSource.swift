@@ -73,6 +73,10 @@ public class BackbaseTableViewDataSource<T: BackbaseTableViewCell>: NSObject, UI
         return cell
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.tableView(didSelectModelAt: items[indexPath.row])
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
