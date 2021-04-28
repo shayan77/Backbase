@@ -45,7 +45,7 @@ class CitiesViewController: UIViewController, Storyboarded {
         // Subscribe to cities
         citiesViewModel.cities = { [weak self] cities in
             guard let self = self else { return }
-            // Add new products to tableView dataSource.
+            // Add new cities to tableView dataSource.
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 self.citiesTableViewDataSource.refreshWithNewItems(cities)
             })

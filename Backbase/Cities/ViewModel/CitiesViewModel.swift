@@ -32,7 +32,7 @@ final class CitiesViewModel {
             switch result {
             case .success(let cities):
                 self.allCities.append(contentsOf: cities)
-                self.sort()
+                self.sortedCities()
                 self.cities?(self.allCities)
             case .failure(let error):
                 self.errorHandler?(error.localizedDescription)
@@ -45,13 +45,13 @@ final class CitiesViewModel {
             self.cities?(self.allCities)
         } else {
             filterdCities = allCities.filter { (city: City) -> Bool in
-                return (city.name ?? "").lowercased().contains(param.lowercased())
+                return (city.name ?? "").lowercased().hasPrefix(param.lowercased())
             }
             self.cities?(filterdCities)
         }
     }
     
-    private func sort() {
+    private func sortedCities() {
         allCities.sort {
             $0.name ?? "" < $1.name ?? ""
         }
