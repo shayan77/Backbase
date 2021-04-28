@@ -15,7 +15,7 @@ import UIKit
  
  */
 
-public protocol BackbaseTableViewDelegate: class {
+public protocol BackbaseTableViewDelegate: AnyObject {
     func tableView(cellForRowAt: IndexPath, cell: UITableViewCell)
     func tableView(willDisplay cellIndexPath: IndexPath, cell: UITableViewCell)
     func tableView(didEndDisplaying cellIndexPath: IndexPath, cell: UITableViewCell)

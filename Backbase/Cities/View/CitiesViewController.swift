@@ -62,8 +62,8 @@ class CitiesViewController: UIViewController, Storyboarded {
 // MARK: - BackbaseTableViewDelegate
 extension CitiesViewController: BackbaseTableViewDelegate {
     func tableView<T>(didSelectModelAt model: T) {
-        if let city = model as? City, let coordinates = city.coordinate {
-            self.coordinator?.navigateToMapWith(coordinates)
+        if let city = model as? City {
+            self.coordinator?.navigateToMap(city)
         }
     }
 }

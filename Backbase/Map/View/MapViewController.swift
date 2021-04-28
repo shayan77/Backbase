@@ -22,19 +22,23 @@ class MapViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
 
         setupView()
-        setupBindings()
     }
     
     // MARK: - Customizing View
     private func setupView() {
-        print(mapViewModel.longitude)
-        print(mapViewModel.latitude)
+        let location = CLLocation(latitude: mapViewModel.latitude, longitude: mapViewModel.longitude)
+        updateLocationOnMap(to: location, with: mapViewModel.name)
     }
     
-    // MARK: - Bindings
-    private func setupBindings() {
+    private func updateLocationOnMap(to location: CLLocation, with title: String?) {
         
-        // Subscribe to coordintaes
+        let point = MKPointAnnotation()
+        point.title = title
+        point.coordinate = location.coordinate
+        self.map.removeAnnotations(self.map.annotations)
+        self.map.addAnnotation(point)
         
+        let viewRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+        self.map.setRegion(viewRegion, animated: true)
     }
 }

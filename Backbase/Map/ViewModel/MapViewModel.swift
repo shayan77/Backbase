@@ -26,11 +26,21 @@ final class MapViewModel {
             _latitude = newValue
         }
     }
+    
+    private var _name: String = ""
+    public var name: String {
+        get {
+            return _name
+        } set {
+            _name = newValue
+        }
+    }
         
-    public var coordinate: Coordinate? {
+    public var city: City? {
         didSet {
-            _longitude = coordinate?.longitude ?? 0.0
-            _latitude = coordinate?.latitude ?? 0.0
+            _longitude = city?.coordinate?.longitude ?? 0.0
+            _latitude = city?.coordinate?.latitude ?? 0.0
+            _name = city?.name ?? ""
         }
     }
 }
