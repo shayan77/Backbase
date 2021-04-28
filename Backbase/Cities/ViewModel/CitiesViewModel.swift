@@ -31,10 +31,17 @@ final class CitiesViewModel {
             switch result {
             case .success(let cities):
                 self.allCities.append(contentsOf: cities)
-                self.cities?(cities)
+                self.sort()
+                self.cities?(self.allCities)
             case .failure(let error):
                 self.errorHandler?(error.localizedDescription)
             }
+        }
+    }
+    
+    private func sort() {
+        allCities.sort {
+            $0.name ?? "" < $1.name ?? ""
         }
     }
 }
