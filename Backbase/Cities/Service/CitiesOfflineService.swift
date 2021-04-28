@@ -17,7 +17,6 @@ final class CitiesOfflineService: CitiesServiceProtocol {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 guard let cities = try? JSONDecoder().decode([City].self, from: data) else {
-                    assertionFailure("Decode failed")
                     completionHandler(.failure(.jsonParseError))
                     return
                 }
