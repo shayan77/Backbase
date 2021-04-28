@@ -12,11 +12,13 @@ class CitiesViewController: UIViewController, Storyboarded {
     // MARK: - Properties
     @IBOutlet var citiesTableView: UITableView!
     
-    var citiesTableViewDataSource: BackbaseTableViewDataSource<CityCell>!
+    private var citiesTableViewDataSource: BackbaseTableViewDataSource<CityCell>!
     
     weak var coordinator: AppCoordinator?
     
     let citiesViewModel = CitiesViewModel(citiesService: CitiesOfflineService.shared)
+    
+    private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - ViewCycle
     override func viewDidLoad() {
@@ -33,6 +35,8 @@ class CitiesViewController: UIViewController, Storyboarded {
         citiesTableViewDataSource = BackbaseTableViewDataSource(cellHeight: 60, items: [], tableView: citiesTableView, delegate: self, animationType: .type2(0.5))
         citiesTableView.delegate = citiesTableViewDataSource
         citiesTableView.dataSource = citiesTableViewDataSource
+        
+        createSearchControl()
     }
     
     // MARK: - Bindings
@@ -43,7 +47,7 @@ class CitiesViewController: UIViewController, Storyboarded {
             guard let self = self else { return }
             // Add new products to tableView dataSource.
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                self.citiesTableViewDataSource.appendItemsToTableView(cities)
+                self.citiesTableViewDataSource.refreshWithNewItems(cities)
             })
         }
         
@@ -57,6 +61,18 @@ class CitiesViewController: UIViewController, Storyboarded {
     private func getData() {
         citiesViewModel.getCities()
     }
+    
+    private func createSearchControl() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Cities"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    private var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
 }
 
 // MARK: - BackbaseTableViewDelegate
@@ -65,5 +81,12 @@ extension CitiesViewController: BackbaseTableViewDelegate {
         if let city = model as? City {
             self.coordinator?.navigateToMap(city)
         }
+    }
+}
+
+extension CitiesViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        citiesViewModel.searchCitiesWith(searchBar.text ?? "", isSearchEmpty: isSearchBarEmpty)
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 /*
- Since We are calling two api calls I used DispatchGroup to make sure both api are called and the data is ready.
- */
+Here I get list of cities from the CitiesService.
+*/
 
 final class CitiesViewModel {
     
@@ -23,6 +23,7 @@ final class CitiesViewModel {
     var errorHandler: ((String) -> Void)?
     
     private var allCities: [City] = []
+    private var filterdCities: [City] = []
     
     func getCities() {
         
@@ -36,6 +37,17 @@ final class CitiesViewModel {
             case .failure(let error):
                 self.errorHandler?(error.localizedDescription)
             }
+        }
+    }
+    
+    func searchCitiesWith(_ param: String, isSearchEmpty: Bool) {
+        if isSearchEmpty {
+            self.cities?(self.allCities)
+        } else {
+            filterdCities = allCities.filter { (city: City) -> Bool in
+                return (city.name ?? "").lowercased().contains(param.lowercased())
+            }
+            self.cities?(filterdCities)
         }
     }
     
