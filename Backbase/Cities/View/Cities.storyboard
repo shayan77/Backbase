@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,18 +21,24 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-JA-pyA">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E2n-9Z-jfg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ogz-JA-pyA" firstAttribute="centerX" secondItem="F49-W9-k4I" secondAttribute="centerX" id="1E9-AL-zQT"/>
                             <constraint firstItem="FUU-Cw-KbB" firstAttribute="leading" secondItem="E2n-9Z-jfg" secondAttribute="leading" id="Fi5-xF-uuO"/>
                             <constraint firstItem="FUU-Cw-KbB" firstAttribute="top" secondItem="E2n-9Z-jfg" secondAttribute="top" id="FrA-lL-ZcS"/>
                             <constraint firstItem="E2n-9Z-jfg" firstAttribute="trailing" secondItem="FUU-Cw-KbB" secondAttribute="trailing" id="MQ0-fH-lHs"/>
                             <constraint firstAttribute="bottom" secondItem="FUU-Cw-KbB" secondAttribute="bottom" id="biI-zr-uyE"/>
+                            <constraint firstItem="Ogz-JA-pyA" firstAttribute="centerY" secondItem="F49-W9-k4I" secondAttribute="centerY" id="yAd-45-d5e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="citiesTableView" destination="FUU-Cw-KbB" id="rYG-iC-wa3"/>
+                        <outlet property="loading" destination="Ogz-JA-pyA" id="CYV-Yw-mu0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="729-Xr-bNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

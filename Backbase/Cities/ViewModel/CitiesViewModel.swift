@@ -22,13 +22,16 @@ final class CitiesViewModel {
     var cities: (([City]) -> Void)?
     var errorHandler: ((String) -> Void)?
     
+    var loading: ((Bool) -> Void)?
+    
     private var allCities: [City] = []
     private var filterdCities: [City] = []
     
     func getCities() {
-        
+        self.loading?(true)
         citiesService.getCities { [weak self] result in
             guard let self = self else { return }
+            self.loading?(false)
             switch result {
             case .success(let cities):
                 self.allCities.append(contentsOf: cities)

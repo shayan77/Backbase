@@ -11,6 +11,11 @@ class CitiesViewController: UIViewController, Storyboarded {
     
     // MARK: - Properties
     @IBOutlet var citiesTableView: UITableView!
+    @IBOutlet var loading: UIActivityIndicatorView! {
+        didSet {
+            loading.hidesWhenStopped = true
+        }
+    }
     
     private var citiesTableViewDataSource: BackbaseTableViewDataSource<CityCell>!
     
@@ -42,13 +47,17 @@ class CitiesViewController: UIViewController, Storyboarded {
     // MARK: - Bindings
     private func setupBindings() {
         
+        // Subscribe to Loading
+        citiesViewModel.loading = { [weak self] isLoading in
+            guard let self = self else { return }
+            isLoading ? self.loading.startAnimating() : self.loading.stopAnimating()
+        }
+        
         // Subscribe to cities
         citiesViewModel.cities = { [weak self] cities in
             guard let self = self else { return }
             // Add new cities to tableView dataSource.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-                self.citiesTableViewDataSource.refreshWithNewItems(cities)
-            })
+            self.citiesTableViewDataSource.refreshWithNewItems(cities)
         }
         
         // Subscribe to errors
