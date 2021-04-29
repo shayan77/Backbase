@@ -24,8 +24,8 @@ final class CitiesViewModel {
     
     var loading: ((Bool) -> Void)?
     
-    private var allCities: [City] = []
-    private var filterdCities: [City] = []
+    public var allCities: [City] = []
+    public var filterdCities: [City] = []
     
     func getCities() {
         self.loading?(true)
